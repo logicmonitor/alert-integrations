@@ -1,0 +1,50 @@
+{
+    "enabledStatus": [
+        "active",
+        "update",
+        "clear",
+        "ack"
+    ],
+    "parseMethod": "",
+    "name": "Webex Teams",
+    "ack": {
+        "headers": [],
+        "password": "********",
+        "method": "post",
+        "payload": "{\n    \"markdown\" : \"LogicMonitor Acknowledgement Notification:(**##LEVEL## Alert received: ##ALERTID##**)\\n  - Group: ##GROUP##\\n  - Host: ##HOST##\\n  - Datasource: ##DATASOURCE##\\n  - Datapoint: ##DATAPOINT##\\n  - Threshold: ##THRESHOLD##\\n  - Duration: ##DURATION##\\n   - Start: ##START##\\n  - Alert Url: [##AlertDetailURL##](##AlertDetailURL##)\\n  - Service URL: ##URL##\\n  - Service Description: ##WEBSITEDESCRIPTION##\\n  - Service Checkpoint: ##CHECKPOINT##\\n  - Service Group: ##WEBSITEGROUP##\"\n}",
+        "payloadFormat": "json",
+        "url": "https://webexapis.com/v1/webhooks/incoming/##WEBEX.INCOMING.WEBHOOK##",
+        "username": ""
+    },
+    "clear": {
+        "headers": [],
+        "password": "********",
+        "method": "post",
+        "payload": "{\n    \"markdown\" : \"LogicMonitor Alert Clear Notification:(**##LEVEL## Alert received: ##ALERTID##**)\\n  - Group: ##GROUP##\\n  - Host: ##HOST##\\n  - Datasource: ##DATASOURCE##\\n  - Datapoint: ##DATAPOINT##\\n  - Threshold: ##THRESHOLD##\\n  - Duration: ##DURATION##\\n   - Start: ##START##\\n  - Alert Url: [##AlertDetailURL##](##AlertDetailURL##)\\n  - Service URL: ##URL##\\n  - Service Description: ##WEBSITEDESCRIPTION##\\n  - Service Checkpoint: ##CHECKPOINT##\\n  - Service Group: ##WEBSITEGROUP##\"\n}",
+        "payloadFormat": "json",
+        "url": "https://webexapis.com/v1/webhooks/incoming/##WEBEX.INCOMING.WEBHOOK##",
+        "username": ""
+    },
+    "description": "Send LogicMonitor Alerts to Webex Teams. Requires Webex incoming webhook name to be set as resource property ##WEBEX.INCOMING.WEBHOOK## This can be done at the root of the account, at the group level, or the tokens in the URLs below can be replaced with the actual keys.\n\nCourtesy of LogicMonitor Sales Engineering Team.",
+    "active": {
+        "headers": [],
+        "password": "********",
+        "method": "post",
+        "payload": "{\n    \"markdown\" : \"LogicMonitor Alert Notification:(**##LEVEL## Alert received: ##ALERTID##**)\\n  - Group: ##GROUP##\\n  - Host: ##HOST##\\n  - Datasource: ##DATASOURCE##\\n  - Datapoint: ##DATAPOINT##\\n  - Threshold: ##THRESHOLD##\\n  - Duration: ##DURATION##\\n   - Start: ##START##\\n  - Alert Url: [##AlertDetailURL##](##AlertDetailURL##)\\n  - Service URL: ##URL##\\n  - Service Description: ##WEBSITEDESCRIPTION##\\n  - Service Checkpoint: ##CHECKPOINT##\\n  - Service Group: ##WEBSITEGROUP##\"\n}",
+        "payloadFormat": "json",
+        "url": "https://webexapis.com/v1/webhooks/incoming/##WEBEX.INCOMING.WEBHOOK##",
+        "username": ""
+    },
+    "update": {
+        "headers": [],
+        "password": "********",
+        "method": "post",
+        "payload": "{\n    \"markdown\" : \"LogicMonitor Alert Update Notification:(**##LEVEL## Alert received: ##ALERTID##**)\\n  - Group: ##GROUP##\\n  - Host: ##HOST##\\n  - Datasource: ##DATASOURCE##\\n  - Datapoint: ##DATAPOINT##\\n  - Threshold: ##THRESHOLD##\\n  - Duration: ##DURATION##\\n   - Start: ##START##\\n  - Alert Url: [##AlertDetailURL##](##AlertDetailURL##)\\n  - Service URL: ##URL##\\n  - Service Description: ##WEBSITEDESCRIPTION##\\n  - Service Checkpoint: ##CHECKPOINT##\\n  - Service Group: ##WEBSITEGROUP##\"\n}",
+        "payloadFormat": "json",
+        "url": "https://webexapis.com/v1/webhooks/incoming/##WEBEX.INCOMING.WEBHOOK##",
+        "username": ""
+    },
+    "type": "http",
+    "parseExpression": "",
+    "uiDetails": "{\"includeIDInHttpResponse\":false,\"groupInfo\":[[\"update\"],[\"clear\"],[\"ack\"],[\"active\"]],\"multipleMode\":true}"
+}
